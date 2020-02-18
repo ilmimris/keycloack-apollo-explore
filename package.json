@@ -1,0 +1,14 @@
+{
+  "name": "keycloak-graphql",
+  "version": "1.0.0",
+  "description": "Test integration keycload IAM with Apollo Gateway (GraphQL)",
+  "main": "src/index.ts",
+  "repository": "https://github.com/ilmimris/keycloack-apollo-explore.git",
+  "author": "Muhammad Rafiul Ilmi Syarifudin",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "apollo-server-express": "^2.10.1",
+    "keycloak-connect-graphql": "^0.2.4"
+  }
+}
