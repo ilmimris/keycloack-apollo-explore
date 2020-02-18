@@ -2,10 +2,10 @@
   "realm": "explore",
   "auth-server-url": "https://18.140.88.82:8443/auth/",
   "ssl-required": "external",
-  "resource": "account",
+  "resource": "apollo",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "9097f8dc-c7a8-48d1-96b9-a8693c251def"
+    "secret": "bf745662-42a1-4599-8e18-c4063caed59c"
   },
   "use-resource-role-mappings": true,
   "confidential-port": 0
