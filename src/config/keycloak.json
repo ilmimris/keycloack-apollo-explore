@@ -1,12 +1,13 @@
 {
   "realm": "explore",
-  "auth-server-url": "https://18.140.88.82:8443/auth/",
-  "ssl-required": "external",
+  "auth-server-url": "http://18.140.88.82:8080/auth",
+  "ssl-required": "none",
   "resource": "apollo",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "bf745662-42a1-4599-8e18-c4063caed59c"
+    "secret": "e9068469-e7ef-4d10-912b-29f24c857423"
   },
   "use-resource-role-mappings": true,
-  "confidential-port": 0
+  "confidential-port": 0,
+  "policy-enforcer": {}
 }

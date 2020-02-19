@@ -1,7 +1,7 @@
 // index.ts
 // Apollo Server
 import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import depthLimit from 'graphql-depth-limit';
 import { createServer } from 'http';
 import compression from 'compression';
@@ -15,11 +15,13 @@ const port = 3000;
 
 const app = express();
 const { keycloak } = new configureKeycloak(app, graphqlPath);
+// Ensure entire GraphQL Api can only be accessed by authenticated users
+app.use(graphqlPath, keycloak.protect())
 
 const server = new ApolloServer({
   schema,
   validationRules: [depthLimit(7)],
-  context: ({req}) => {
+  context: ({req }) => {
     return {
       kauth: new KeycloakContext({ req })
     }
@@ -28,7 +30,7 @@ const server = new ApolloServer({
 
 app.use('*', cors());
 app.use(compression());
-app.use(graphqlPath, keycloak.middleware());
+
 
 server.applyMiddleware({ app, path: graphqlPath });
 const httpServer = createServer(app);

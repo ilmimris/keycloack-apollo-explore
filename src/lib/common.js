@@ -10,7 +10,7 @@ function configureKeycloak(app, graphqlPath) {
   const memoryStore = new session.MemoryStore()
 
   app.use(session({
-    secret: process.env.SESSION_SECRET_STRING || 'this should be a long secret',
+    secret: process.env.SESSION_SECRET_STRING || 'e9068469-e7ef-4d10-912b-29f24c857423',
     resave: false,
     saveUninitialized: true,
     store: memoryStore
