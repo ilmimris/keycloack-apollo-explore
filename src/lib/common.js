@@ -26,7 +26,7 @@ function configureKeycloak(app, graphqlPath) {
   }))
 
   app.use(function (req, res, next){
-    console.log({kauth: req.kauth});
+    // console.log({kauth: req.kauth});
     return next();
   })
 
