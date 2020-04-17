@@ -10,7 +10,7 @@ function configureKeycloak(app, graphqlPath) {
   const memoryStore = new session.MemoryStore()
 
   app.use(session({
-    secret: process.env.SESSION_SECRET_STRING || 'e9068469-e7ef-4d10-912b-29f24c857423',
+    secret: process.env.SESSION_SECRET_STRING || 'this should be a long secret',
     resave: false,
     saveUninitialized: true,
     store: memoryStore
@@ -24,6 +24,11 @@ function configureKeycloak(app, graphqlPath) {
   app.use(keycloak.middleware({
     admin: graphqlPath
   }))
+
+  app.use(function (req, res, next){
+    console.log({kauth: req.kauth});
+    return next();
+  })
 
   // Protect the main route for all graphql services
   // Disable unauthenticated access

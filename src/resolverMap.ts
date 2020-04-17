@@ -5,10 +5,14 @@ const resolverMap: IResolvers = {
         hello: (obj, args, context, info) => {
           // log some of the auth related info added to the context
           console.log(context.kauth.isAuthenticated())
-          console.log(context.kauth.accessToken.content.preferred_username)
+          console.log(context.kauth)
     
-          const name = context.kauth.accessToken.content.preferred_username || 'world'
-          return `Hello ${name}`
+          if (context.kauth.accessToken) {
+            const name = context.kauth.accessToken.content.preferred_username || 'world'
+            return `Hello ${name}`
+          }
+
+          return '';
         }
     }
 };

@@ -1,13 +1,15 @@
 {
   "realm": "explore",
-  "auth-server-url": "http://18.140.88.82:8080/auth",
+  "auth-server-url": "http://localhost:8080/auth",
   "ssl-required": "none",
   "resource": "apollo",
+  "clientId": "apollo",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "e9068469-e7ef-4d10-912b-29f24c857423"
+    "secret": "42a06fa1-03ff-4ec9-bb81-bc7bfaa66404"
   },
   "use-resource-role-mappings": true,
   "confidential-port": 0,
-  "policy-enforcer": {}
+  "policy-enforcer": {},
+  "cors_enabled": true
 }
